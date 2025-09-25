@@ -1,0 +1,84 @@
+repro:
+  seed: 42
+  tf_deterministic: true
+
+data:
+  path: data
+  features: sensors_only
+  seq_len: 80
+  stride: 1
+  label_mode: any
+  label_dilation: 3
+  anomaly_horizon: 30
+  scale: standard
+  scale_fit_on: train_normals_only
+  drop_low_variance_threshold: 1e-6
+  drop_sensors: ["s01","s05","s10","s16","s18","s19"]
+  unitwise: true
+
+splits:
+  train_frac: 0.8
+  seed: 42
+
+training_lstm:
+  enc1: 128
+  enc2: 64
+  latent: 32
+  dropout: 0.2
+  batch: 64
+  epochs: 100
+  lr: 5.0e-4
+  loss: mse
+  huber_delta: 1.0
+  val_frac: 0.10
+  early_stopping_patience: 10
+  early_stopping_min_delta: 1e-4
+  rlr_patience: 5
+
+training_mae:
+  backbone: lstm     
+  enc_units: 128
+  dec_units: 128
+  latent: 32
+  dropout: 0.1
+  batch: 64
+  epochs: 80
+  lr: 5.0e-4
+  val_frac: 0.10
+  early_stopping_patience: 10
+  early_stopping_min_delta: 1e-4
+  rlr_patience: 5
+
+  # Masking
+  mask_ratio_time: 0.30
+  mask_ratio_feat: 0.10
+  mask_token: zero      
+  loss_scope: hybrid     
+  hybrid_alpha: 0.05 
+
+inference:
+  K_masks: 256
+  variance_normalize: true
+  vnorm_source: train_normals_masked_residuals
+
+evaluation:
+  thresholding: val_sweep
+  beta: 1
+  sweep:
+    pmin: 70.0
+    pmax: 99.9
+    step: 0.1
+  smooth_kernel: 0
+  agg_window: 1
+  min_run_length: 3
+  scoring: varnorm
+  calibration:
+    warmup:
+      enable: true
+      K: 50
+    ema:
+      enable: false
+      alpha: 0.3
+    per_unit_threshold:
+      enable: false      
+      percentile: 75.0  

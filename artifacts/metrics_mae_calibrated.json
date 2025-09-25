@@ -1,0 +1,26 @@
+{
+  "raw": {
+    "val_pr_auc": 0.6122205615538494,
+    "test_pr_auc": 0.10852788422075473
+  },
+  "warm": {
+    "val_pr_auc": 0.7594755399738042,
+    "test_pr_auc": 0.18689981619716795,
+    "threshold": 2.1548306064604668,
+    "percentile": 79.79999999999944,
+    "postproc": {
+      "min_run_length": 3
+    },
+    "test_confusion_at_thresh": {
+      "precision": 0.24193548387096775,
+      "recall": 0.14742014742014742,
+      "f1": 0.183206106870229
+    }
+  },
+  "calibration": {
+    "warmup": {
+      "enabled": true,
+      "K": 50
+    }
+  }
+}

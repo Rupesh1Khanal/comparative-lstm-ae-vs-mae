@@ -1,0 +1,50 @@
+{
+  "raw": {
+    "val_pr_auc": 0.6106958817561252,
+    "test_pr_auc": 0.11182629887229519
+  },
+  "warm": {
+    "val_pr_auc": 0.7563999836201167,
+    "test_pr_auc": 0.2014293563733155,
+    "threshold": 1.797691293358729,
+    "percentile": 77.69999999999956,
+    "postproc": {
+      "min_run_length": 3
+    },
+    "test_confusion_at_thresh": {
+      "precision": 0.2246153846153846,
+      "recall": 0.17936117936117937,
+      "f1": 0.1994535519125683
+    },
+    "per_unit_sweep": {
+      "search": {
+        "percentiles": [
+          60.0,
+          90.0,
+          2.5
+        ],
+        "min_run_candidates": [
+          3,
+          5
+        ]
+      },
+      "best_from_val": {
+        "min_run": 5,
+        "percentile": 77.5,
+        "f1": 0.653781512605042
+      },
+      "test_confusion_at_best": {
+        "precision": 0.17994858611825193,
+        "recall": 0.171990171990172,
+        "f1": 0.17587939698492464
+      },
+      "test_pr_auc": 0.2014293563733155
+    }
+  },
+  "calibration": {
+    "warmup": {
+      "enabled": true,
+      "K": 50
+    }
+  }
+}

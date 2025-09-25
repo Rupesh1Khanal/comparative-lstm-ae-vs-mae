@@ -1,0 +1,23 @@
+{
+  "pr_auc_raw": 0.4145009704188519,
+  "pr_auc_warmup": 0.5369870700320123,
+  "calibration": {
+    "warmup": {
+      "enabled": true,
+      "K": 50
+    }
+  },
+  "val_percentile": 70.19999999999999,
+  "threshold_value": 3.35391332149505,
+  "confusion_at_chosen": {
+    "precision": 0.36129032258064514,
+    "recall": 0.5503685503685504,
+    "f1": 0.436222005842259,
+    "tp": 224,
+    "fp": 396,
+    "fn": 183,
+    "tn": 4857,
+    "n_windows": 5660,
+    "n_pos": 407
+  }
+}

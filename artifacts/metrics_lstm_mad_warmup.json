@@ -1,0 +1,16 @@
+{
+  "val_pr_auc_raw": 0.32071245180925834,
+  "val_pr_auc_warmup": 0.6093424524602385,
+  "test_pr_auc_raw": 0.059259056537739864,
+  "test_pr_auc_warmup": 0.1402553592559652,
+  "chosen_percentile_on_val": 82.49999999999929,
+  "chosen_threshold": 1.680029529333101,
+  "test_metrics_at_chosen": {
+    "precision": 0.19112627986348124,
+    "recall": 0.1375921375921376,
+    "f1": 0.16,
+    "pr_auc": 0.1402553592559652
+  },
+  "K_warmup": 50,
+  "scoring": "MAD-normalized MASR + per-engine warmup z-score"
+}

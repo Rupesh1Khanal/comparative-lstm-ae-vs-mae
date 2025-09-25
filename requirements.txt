@@ -1,0 +1,15 @@
+# Core scientific stack
+numpy==1.23.5
+pandas==2.3.2
+scikit-learn==1.7.2
+matplotlib==3.10.6
+PyYAML==6.0.2
+
+# Deep learning
+tensorflow==2.10.1
+
+# Jupyter for running notebooks
+notebook==7.2.2
+jupyterlab==4.3.4
+ipython==8.37.0
+ipykernel==6.29.5

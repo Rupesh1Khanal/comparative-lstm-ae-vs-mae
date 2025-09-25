@@ -1,0 +1,19 @@
+{
+  "precision": 0.5428109854604201,
+  "recall": 0.49411764705882355,
+  "f1": 0.5173210161662818,
+  "pr_auc": 0.6122205615538494,
+  "best_percentile": 75.49999999999969,
+  "threshold": 1.1304305428266486,
+  "scoring": {
+    "type": "masked_mse_varnorm",
+    "K": 256,
+    "mask_ratio_time": 0.3,
+    "mask_ratio_feat": 0.1,
+    "mask_token": "zero",
+    "loss_scope": "hybrid",
+    "alpha_unmasked": 0.05
+  },
+  "params": 765871,
+  "yaml_hash": "fff0c383d19eb2a711443c4ba712b508"
+}
